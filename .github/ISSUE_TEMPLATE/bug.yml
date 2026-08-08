@@ -1,0 +1,48 @@
+name: Bug report
+description: Report reproducible SavePoint behavior that is not working as expected.
+title: '[Bug]: '
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include repository secrets, tokens, private source, or personal paths.
+  - type: input
+    id: version
+    attributes:
+      label: SavePoint version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use a temporary or fictional repository if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed tokens, private source, and personal filesystem paths.
+          required: true

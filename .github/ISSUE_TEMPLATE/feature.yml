@@ -1,0 +1,26 @@
+name: Focused feature request
+description: Propose an improvement that fits SavePoint's local-first product boundary.
+title: '[Feature]: '
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Developer problem
+      description: What makes resuming a coding session harder today?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the useful outcome without prescribing an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and security impact
+      description: What new data or trust boundary, if any, would this introduce?
+    validations:
+      required: true

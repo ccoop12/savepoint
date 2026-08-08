@@ -1,0 +1,36 @@
+# Changelog
+
+All notable changes to SavePoint are documented here. The format follows
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and releases use Semantic Versioning.
+
+## [Unreleased]
+
+### v0.1.0 release candidate
+
+The initial public release is being prepared. The items below describe the current release candidate;
+they are not a claim that a tag, downloadable release, or project page is already public.
+
+### Added
+
+- Local Git repository registration and status capture
+- Structured manual checkpoints and opt-in per-repository automatic checkpoints
+- Persistent SQLite storage with versioned migrations
+- Searchable and filterable multi-repository checkpoint timeline
+- Checkpoint detail editing and confirmed deletion
+- Same-repository metadata and context comparison
+- Resume briefing with current-repository drift information
+- Markdown and JSON export
+- Secret-path exclusion and likely-token redaction
+- Dark and light themes, keyboard shortcuts, onboarding, privacy, and settings views
+- Unit, integration, deterministic renderer E2E, and real Electron backend test suites
+- CI plus configured unsigned Windows, macOS, and Linux release builds, checksums, and GitHub Pages
+  deployment
+
+### Security
+
+- Sandboxed, context-isolated renderer with Node integration disabled
+- Narrow, typed, runtime-validated IPC boundary
+- Private packaged application protocol and hardened Electron fuses
+- Config-isolated, bounded Git capture that cannot inherit repository filters, hooks, diff drivers,
+  credential helpers, or submodule commands
+- No source contents, complete diffs, telemetry, accounts, or data uploads
