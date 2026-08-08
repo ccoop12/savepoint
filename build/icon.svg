@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title" viewBox="0 0 1024 1024">
+  <title id="title">SavePoint application icon</title>
+  <rect width="1024" height="1024" rx="224" fill="#151817"/>
+  <path d="M260 168h504a92 92 0 0 1 92 92v504a92 92 0 0 1-92 92H260a92 92 0 0 1-92-92V260a92 92 0 0 1 92-92Z" fill="none" stroke="#8fe388" stroke-width="64"/>
+  <path d="M364 328h296a52 52 0 0 1 52 52v264a52 52 0 0 1-52 52H364a52 52 0 0 1-52-52V380a52 52 0 0 1 52-52Z" fill="#8fe388"/>
+  <path d="M432 424h160v176H432z" fill="#151817"/>
+  <circle cx="512" cy="512" r="34" fill="#8fe388"/>
+</svg>

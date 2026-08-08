@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">SavePoint</title>
+  <desc id="desc">A checkpoint flag formed from two connected brackets</desc>
+  <path fill="#151714" d="M14 6h36a8 8 0 0 1 8 8v36a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8Z"/>
+  <path fill="none" stroke="#9FE870" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M22 45V20h20l-5 7 5 7H22"/>
+  <circle cx="22" cy="46" r="4" fill="#F2EFE7"/>
+</svg>
