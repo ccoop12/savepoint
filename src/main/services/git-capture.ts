@@ -9,6 +9,7 @@ import {
   realpath,
   rm,
   stat,
+  utimes,
   writeFile
 } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -115,6 +116,8 @@ function gitEnvironment(overrides: NodeJS.ProcessEnv = {}): NodeJS.ProcessEnv {
     GIT_OPTIONAL_LOCKS: '0',
     GIT_TERMINAL_PROMPT: '0',
     GIT_CONFIG_COUNT: '0',
+    GIT_CONFIG_GLOBAL: process.platform === 'win32' ? 'NUL' : '/dev/null',
+    GIT_CONFIG_NOSYSTEM: '1',
     GIT_ATTR_NOSYSTEM: '1',
     NO_COLOR: '1',
     ...overrides
@@ -133,6 +136,9 @@ function gitFor(path: string, environment: NodeJS.ProcessEnv = {}): SimpleGit {
     timeout: { block: 15_000, stdOut: false, stdErr: false },
     unsafe: {
       allowUnsafeAskPass: true,
+      // The only config path injected below is the platform null device, which
+      // prevents inherited global configuration from influencing capture.
+      allowUnsafeConfigPaths: true,
       allowUnsafeConfigEnvCount: true,
       allowUnsafeCredentialHelper: true,
       allowUnsafeFsMonitor: true,
@@ -313,6 +319,10 @@ async function copyRegularFileIfPresent(
   if (metadata.size > maximumBytes) throw new CaptureLimitError()
   await copyFile(source, destination)
   await chmod(destination, 0o600)
+  // Git uses the index file's mtime to recognize entries whose worktree
+  // timestamp may be racily equal to the cached timestamp. copyFile assigns a
+  // fresh mtime, which can incorrectly make a same-size edit look clean.
+  await utimes(destination, metadata.atime, metadata.mtime)
   return metadata.size
 }
 

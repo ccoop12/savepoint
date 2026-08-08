@@ -124,6 +124,38 @@ describe('GitCaptureService', () => {
     }
   })
 
+  it('does not inherit global ignore configuration', async () => {
+    const repositoryPath = await createRepository()
+    const git = simpleGit(repositoryPath)
+    await writeFile(join(repositoryPath, 'app.ts'), 'export const version = 1\n')
+    await git.add('app.ts')
+    await git.commit('test: add globally ignored fixture')
+    await writeFile(join(repositoryPath, 'app.ts'), 'export const version = 2\n')
+
+    const globalHome = await mkdtemp(join(tmpdir(), 'savepoint-global-config-'))
+    temporaryDirectories.push(globalHome)
+    const globalExcludes = join(globalHome, 'global-excludes')
+    await writeFile(globalExcludes, 'app.ts\n')
+    await writeFile(
+      join(globalHome, '.gitconfig'),
+      `[core]\n\texcludesFile = ${globalExcludes.replaceAll('\\', '/')}\n`
+    )
+
+    const previousHome = process.env.HOME
+    const previousUserProfile = process.env.USERPROFILE
+    process.env.HOME = globalHome
+    process.env.USERPROFILE = globalHome
+    try {
+      const captured = await new GitCaptureService().capture(repositoryPath)
+      expect(captured.files.map(({ path }) => path)).toContain('app.ts')
+    } finally {
+      if (previousHome === undefined) delete process.env.HOME
+      else process.env.HOME = previousHome
+      if (previousUserProfile === undefined) delete process.env.USERPROFILE
+      else process.env.USERPROFILE = previousUserProfile
+    }
+  })
+
   it('supports newly initialized repositories without a first commit', async () => {
     const repositoryPath = await mkdtemp(join(tmpdir(), 'savepoint-empty-git-'))
     temporaryDirectories.push(repositoryPath)

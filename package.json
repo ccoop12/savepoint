@@ -5,7 +5,10 @@
   "private": false,
   "type": "module",
   "main": "out/main/index.js",
-  "author": "SavePoint contributors",
+  "author": {
+    "name": "Jayson Kowalski",
+    "email": "193825568+ccoop12@users.noreply.github.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

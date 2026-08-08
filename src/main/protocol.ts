@@ -1,5 +1,5 @@
 import { readFile, realpath } from 'node:fs/promises'
-import { extname, isAbsolute, relative, resolve } from 'node:path'
+import { extname, isAbsolute, relative, resolve, win32 } from 'node:path'
 
 import { protocol } from 'electron'
 
@@ -90,6 +90,9 @@ export function resolveRendererAssetPath(rendererRoot: string, requestUrl: strin
   }
   if (pathname.includes('\\') || pathname.includes('\0')) return null
   const requested = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '')
+  // A Windows drive path is absolute even when this code is running on POSIX.
+  // Reject it before the host-specific resolver can reinterpret it as a child path.
+  if (win32.isAbsolute(requested)) return null
   const extension = extname(requested).toLocaleLowerCase()
   if (!CONTENT_TYPES.has(extension)) return null
   const root = resolve(rendererRoot)
