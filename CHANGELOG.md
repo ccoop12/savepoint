@@ -5,10 +5,9 @@ All notable changes to SavePoint are documented here. The format follows
 
 ## [Unreleased]
 
-### v0.1.0 release candidate
+## [0.1.0] - 2026-08-08
 
-The initial public release is being prepared. The items below describe the current release candidate;
-they are not a claim that a tag, downloadable release, or project page is already public.
+Initial public release.
 
 ### Added
 
@@ -34,3 +33,6 @@ they are not a claim that a tag, downloadable release, or project page is alread
 - Config-isolated, bounded Git capture that cannot inherit repository filters, hooks, diff drivers,
   credential helpers, or submodule commands
 - No source contents, complete diffs, telemetry, accounts, or data uploads
+
+[Unreleased]: https://github.com/ccoop12/savepoint/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ccoop12/savepoint/releases/tag/v0.1.0
