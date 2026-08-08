@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 760 180">
+  <title id="title">SavePoint</title>
+  <desc id="desc">A checkpoint marker made from nested rounded squares followed by the SavePoint wordmark</desc>
+  <rect width="760" height="180" rx="28" fill="#151817"/>
+  <g transform="translate(42 32)">
+    <path d="M20 4h76a16 16 0 0 1 16 16v76a16 16 0 0 1-16 16H20A16 16 0 0 1 4 96V20A16 16 0 0 1 20 4Z" fill="none" stroke="#8fe388" stroke-width="8"/>
+    <path d="M35 29h46a10 10 0 0 1 10 10v38a10 10 0 0 1-10 10H35a10 10 0 0 1-10-10V39a10 10 0 0 1 10-10Z" fill="#8fe388"/>
+    <path d="M43 45h30v26H43z" fill="#151817"/>
+    <circle cx="58" cy="58" r="5" fill="#8fe388"/>
+  </g>
+  <text x="185" y="112" fill="#f4f1e9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="76" font-weight="700" letter-spacing="-3">SavePoint</text>
+</svg>

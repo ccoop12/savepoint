@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SavePoint is a local-first desktop app that saves and restores development-session context."
+    />
+    <meta name="theme-color" content="#11120f" />
+    <meta property="og:title" content="SavePoint — save your development context" />
+    <meta
+      property="og:description"
+      content="Return to any coding session with the goal, Git state, decisions, and next action intact."
+    />
+    <meta property="og:image" content="https://ccoop12.github.io/savepoint/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SavePoint — save your development context" />
+    <meta
+      name="twitter:description"
+      content="Return to any coding session with the goal, Git state, decisions, and next action intact."
+    />
+    <meta name="twitter:image" content="https://ccoop12.github.io/savepoint/og.png" />
+    <title>SavePoint — Resume without rebuilding context</title>
+    <link rel="icon" href="savepoint-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="SavePoint home">
+        <img src="savepoint-mark.svg" width="30" height="30" alt="" />
+        <span>SavePoint</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+      <a class="button ghost" href="https://github.com/ccoop12/savepoint">View on GitHub</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="release-label"><span></span> v0.1.0 release candidate</div>
+          <h1>Save your development context.<br /><em>Resume without rebuilding it.</em></h1>
+          <p>
+            SavePoint captures the Git state and human reasoning around a coding session, so the
+            next time you open a project you know what mattered—and exactly what to do next.
+          </p>
+          <div class="hero-actions">
+            <span class="button primary" role="status">Public download pending verification</span>
+            <a
+              class="text-link"
+              href="https://github.com/ccoop12/savepoint#install-and-run-from-source"
+            >
+              Build from source <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="hero-facts">
+            <span><b>Local-first</b>No accounts</span>
+            <span><b>Metadata-only</b>No source contents</span>
+            <span><b>Desktop app</b>Electron + React</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit one"></div>
+          <div class="orbit two"></div>
+          <div class="save-node">
+            <img src="savepoint-mark.svg" width="64" height="64" alt="" /><span>Context saved</span
+            ><code>54f0bc9</code>
+          </div>
+          <div class="context-node goal">
+            <small>Current goal</small
+            ><strong>Make queued edits survive<br />a network drop.</strong>
+          </div>
+          <div class="context-node next">
+            <small>Next action</small><strong>Add the reconnect race test.</strong>
+          </div>
+          <div class="context-node branch">
+            <small>Branch</small><code>feature/offline-sync</code>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-shot" aria-label="SavePoint application screenshot">
+        <div class="window-bar">
+          <span></span><span></span><span></span><small>orbit-notes · Overview</small>
+        </div>
+        <img
+          src="assets/savepoint-dashboard.png"
+          alt="SavePoint dashboard showing a repository, working-tree status, current goal, next action, and recent checkpoints"
+        />
+      </section>
+
+      <section class="problem statement-section">
+        <p class="eyebrow">The expensive part of switching projects</p>
+        <h2>
+          Your files remember the code.<br />They don’t remember <em>your train of thought.</em>
+        </h2>
+        <p class="statement-copy">
+          Branches and commits answer “what changed?” SavePoint also preserves what you were trying
+          to achieve, what you decided, what blocked you, and the first useful move when you return.
+        </p>
+      </section>
+
+      <section class="workflow" id="workflow">
+        <div class="section-title">
+          <p class="eyebrow">One small habit, faster re-entry</p>
+          <h2>A save point for work in motion.</h2>
+        </div>
+        <div class="workflow-grid">
+          <article>
+            <span class="step">01</span>
+            <div class="feature-icon">⌁</div>
+            <h3>Connect a repository</h3>
+            <p>
+              Choose a Git workspace with the native folder picker. SavePoint validates it and reads
+              its current metadata.
+            </p>
+          </article>
+          <article>
+            <span class="step">02</span>
+            <div class="feature-icon flag-shape">⚑</div>
+            <h3>Capture a checkpoint</h3>
+            <p>
+              Add the goal, completed work, blockers, and next action. Git state is captured at the
+              same instant.
+            </p>
+          </article>
+          <article>
+            <span class="step">03</span>
+            <div class="feature-icon">↗</div>
+            <h3>Resume in seconds</h3>
+            <p>
+              Open a practical re-entry briefing, copy safe commands, or compare two sessions
+              without touching your files.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="details-grid">
+        <article class="detail-feature wide">
+          <div class="detail-copy">
+            <p class="eyebrow">A timeline with meaning</p>
+            <h2>Search more than commit messages.</h2>
+            <p>
+              Find a past session by goal, note, branch, tag, changed path, or the action you meant
+              to take next.
+            </p>
+            <ul>
+              <li>Manual and opt-in automatic checkpoints</li>
+              <li>Repository, branch, tag, and origin filters</li>
+              <li>Editable human context</li>
+            </ul>
+          </div>
+          <div class="mini-timeline">
+            <div class="mini-row active">
+              <i></i
+              ><span
+                ><b>Queue persistence is wired</b><small>#offline · #sync · needs-test</small></span
+              ><code>54f0bc9</code>
+            </div>
+            <div class="mini-row">
+              <i></i><span><b>Offline creation baseline</b><small>Automatic checkpoint</small></span
+              ><code>8ab21de</code>
+            </div>
+            <div class="mini-row">
+              <i></i><span><b>Sync boundary mapped</b><small>#architecture · #sync</small></span
+              ><code>325ccb1</code>
+            </div>
+          </div>
+        </article>
+        <article class="detail-feature">
+          <p class="eyebrow">Then and now</p>
+          <h2>Compare checkpoints.</h2>
+          <p>
+            See branch, commit, file-status, goal, blocker, and next-action changes. No source-level
+            diff claims—only metadata SavePoint actually stores.
+          </p>
+          <a href="assets/savepoint-compare.png">See the comparison view →</a>
+        </article>
+        <article class="detail-feature accent-feature">
+          <p class="eyebrow">Start with momentum</p>
+          <h2>Get a re-entry briefing.</h2>
+          <p>
+            Turn a checkpoint into a focused “you were here” briefing with safe copy and open
+            actions.
+          </p>
+          <a href="assets/savepoint-resume.png">See the resume view →</a>
+        </article>
+      </section>
+
+      <section class="privacy" id="privacy">
+        <div class="privacy-mark">◎</div>
+        <div>
+          <p class="eyebrow">Privacy is an architectural constraint</p>
+          <h2>Your repository never leaves your machine.</h2>
+          <p>
+            SavePoint has no account system, cloud backend, telemetry, ads, or paid API. It stores
+            structured context and Git metadata in a local database. Source contents, complete
+            diffs, shell history, clipboard data, and environment variables are out of scope by
+            design.
+          </p>
+          <a class="text-link" href="https://github.com/ccoop12/savepoint/blob/main/PRIVACY.md"
+            >Read the privacy policy →</a
+          >
+        </div>
+        <ul>
+          <li><span>✓</span>Secret-like paths are excluded</li>
+          <li><span>✓</span>Git-ignored files are filtered</li>
+          <li><span>✓</span>Custom exclusion patterns</li>
+          <li><span>✓</span>No network required</li>
+        </ul>
+      </section>
+
+      <section class="architecture" id="architecture">
+        <div class="section-title">
+          <p class="eyebrow">Built like a desktop tool should be</p>
+          <h2>A narrow trust boundary.<br />A boring, dependable stack.</h2>
+        </div>
+        <div class="architecture-flow" aria-label="SavePoint architecture">
+          <span><small>Interface</small>React + TypeScript</span><i>→</i
+          ><span><small>Trust boundary</small>Validated IPC</span><i>→</i
+          ><span><small>Local services</small>Git + SQLite</span>
+        </div>
+        <div class="architecture-notes">
+          <p>
+            Electron runs with context isolation enabled and Node integration disabled in the
+            renderer.
+          </p>
+          <p>
+            Git capture uses a temporary config-isolated view, so repository hooks, filters, diff
+            drivers, and submodule commands cannot execute. The capture and filtering logic stays
+            independently testable.
+          </p>
+          <p>
+            Checkpoints use migrations, foreign keys, runtime schemas, and deterministic metadata
+            fingerprints.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta">
+        <img src="savepoint-mark.svg" width="52" height="52" alt="" />
+        <h2>Make the next return easier.</h2>
+        <p>
+          SavePoint v0.1.0 is undergoing final release verification. Inspect the source today;
+          public downloads will appear only after CI, packaging, checksums, and release assets are
+          verified.
+        </p>
+        <div>
+          <span class="button primary" role="status">v0.1.0 download pending</span
+          ><a class="button ghost" href="https://github.com/ccoop12/savepoint">View source</a>
+        </div>
+        <small>Unsigned preview builds may trigger operating-system security warnings.</small>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top"
+        ><img src="savepoint-mark.svg" width="25" height="25" alt="" /><span>SavePoint</span></a
+      >
+      <p>Save your development context. Resume without rebuilding it.</p>
+      <div>
+        <a href="https://github.com/ccoop12/savepoint">GitHub</a
+        ><a href="https://github.com/ccoop12/savepoint/blob/main/docs/ARCHITECTURE.md">Docs</a
+        ><a href="https://github.com/ccoop12/savepoint/blob/main/LICENSE">MIT License</a>
+      </div>
+    </footer>
+  </body>
+</html>
