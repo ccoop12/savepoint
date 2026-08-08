@@ -2,9 +2,8 @@
 
 ## Supported versions
 
-SavePoint v0.1.0 is currently a release candidate and is not code-signed. Before the first public
-release, security fixes are applied to the current release-candidate source. After publication,
-security fixes will be applied to the latest released version.
+SavePoint v0.1.0 is the current supported release and is not code-signed. Security fixes are applied
+to the latest released version.
 
 ## Reporting a vulnerability
 
@@ -48,6 +47,6 @@ Any process running as the same operating-system user may be able to read the lo
 does not encrypt the database at rest. Unsigned installers can be replaced if acquired from an
 untrusted mirror, so use GitHub release checksums.
 
-Dependencies are audited before release. Findings in development or packaging dependencies are
-evaluated for reachability rather than changed blindly; meaningful remaining issues are recorded in
-release notes.
+Dependencies were audited for v0.1.0. Findings in development or packaging dependencies are evaluated
+for reachability rather than changed blindly; meaningful remaining issues are recorded in release
+notes.

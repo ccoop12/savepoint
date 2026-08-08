@@ -9,16 +9,14 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ccoop12/savepoint/releases/tag/v0.1.0"><strong>Download v0.1.0</strong></a> ·
+  <a href="https://ccoop12.github.io/savepoint/">Project page</a> ·
   <a href="docs/ARCHITECTURE.md">Architecture</a> ·
   <a href="docs/DATA_MODEL.md">Data model</a> ·
   <a href="PRIVACY.md">Privacy</a> ·
   <a href="SECURITY.md">Security</a> ·
   <a href="CHANGELOG.md">Changelog</a>
 </p>
-
-> **Release candidate:** v0.1.0 is undergoing final verification. Public downloads and the GitHub
-> Pages project page will be linked here only after CI, packaging, checksums, release assets, and the
-> deployed page have been verified.
 
 SavePoint captures the part of a coding session that Git cannot: what you were trying to do, what
 changed, what is blocked, and exactly where to start next. Each checkpoint combines concise human
@@ -86,10 +84,13 @@ collect shell history, browser history, clipboard contents, environment variable
 source-file contents, or complete diffs. Git-ignored and secret-like files are excluded, and likely
 tokens in user-authored text are redacted. See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md).
 
-## Install and run from source
+## Download or run from source
 
-Public v0.1.0 binaries are pending final release verification. To run the release candidate locally,
-install Node.js 22.12.0 or newer, npm 10 or newer, and Git, then use the lockfile:
+Download [SavePoint v0.1.0](https://github.com/ccoop12/savepoint/releases/tag/v0.1.0) for Windows
+x64, macOS universal, or Linux x64. The builds are unsigned, so verify the downloaded file against
+`SHA256SUMS.txt` and expect an operating-system security warning on first launch.
+
+To run from source, install Node.js 22.12.0 or newer, npm 10 or newer, and Git, then use the lockfile:
 
 ```bash
 npm ci
@@ -141,16 +142,15 @@ npm run build
 npm run package
 ```
 
-`npm run package` creates an unsigned Windows x64 NSIS installer in `release/`. The tag workflow is
-configured to build unsigned Windows, macOS, and Linux artifacts and generate SHA-256 checksums; those
-targets are not considered available until the workflow completes successfully. Unsigned builds may
-trigger Windows SmartScreen or macOS Gatekeeper warnings and must not be described as code-signed.
+`npm run package` creates an unsigned Windows x64 NSIS installer in `release/`. The tag workflow
+builds and publishes unsigned Windows, macOS, and Linux artifacts with a verified SHA-256 manifest.
+Unsigned builds may trigger Windows SmartScreen or macOS Gatekeeper warnings and are not code-signed.
 
 ## Status and limitations
 
-The v0.1.0 release candidate is intended for individual local repositories. It stores metadata rather
-than source snapshots, does not restore branches or files, and does not synchronize across devices.
-Automatic checkpoints require SavePoint to remain running. VS Code launch requires a supported default
+SavePoint v0.1.0 is intended for individual local repositories. It stores metadata rather than source
+snapshots, does not restore branches or files, and does not synchronize across devices. Automatic
+checkpoints require SavePoint to remain running. VS Code launch requires a supported default
 installation path. Repositories using alternate Git object stores are rejected; hydrated Git LFS or
 other filtered files can occasionally be reported as modified because SavePoint intentionally refuses
 to execute repository-configured filters.
