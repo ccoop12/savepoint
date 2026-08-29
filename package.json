@@ -31,7 +31,7 @@
     "postinstall": "node -e \"console.log('SavePoint uses portable SQLite WASM; no native rebuild required.')\""
   },
   "dependencies": {
-    "lucide-react": "^0.536.0",
+    "lucide-react": "^1.34.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "simple-git": "^3.36.0",
