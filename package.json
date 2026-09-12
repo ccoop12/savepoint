@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.536.0",
-    "react": "^19.2.0",
+    "react": "^19.3.0",
     "react-dom": "^19.2.0",
     "simple-git": "^3.36.0",
     "sql.js": "^1.14.1",
